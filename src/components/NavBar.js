@@ -40,7 +40,7 @@ function NavBar() {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Nothing Here!</a>
+                <a className="btn">MADE WITH DAISY!</a>
             </div>
         </div>
     );

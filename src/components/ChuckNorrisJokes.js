@@ -3,14 +3,22 @@ import Axios from 'axios';
 const url = 'https://api.chucknorris.io/jokes/random';
 
 function ChuckNorrisJokes() {
-    const {data, isLoading, refetch} = useQuery(['chuckNorrisJokes'], () => {
+    const {data, isLoading, error, refetch} = useQuery({
+        queryKey : ['chuckNorrisJokes'],
+        queryFn : () => {
         return Axios.get(url)
         .then((res) => res.data.value);
+        }
     });
+    ;
     if (isLoading) {
         return (
         <h2>A Joke is Loading...</h2>);
     }
+
+    if (error) return "An error has occurred: " + error.message;
+
+
     return (
         <div>
             <h1>Chuck Norris Jokes</h1>
