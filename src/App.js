@@ -6,6 +6,8 @@ import CatFact from "./components/CatFact.js";
 import ApiHome from "./components/ApiHome";
 import PageNotFound from "./components/PageNotFound.js";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
+
 
 
 
@@ -31,6 +33,7 @@ function App() {
             <Route path="*" element={<PageNotFound/>}/>
           </Routes>
         </Router>
+        <ReactQueryDevtools initialIsOpen />
       </QueryClientProvider>
     </div>
   );
