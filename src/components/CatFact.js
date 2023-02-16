@@ -4,7 +4,7 @@ const url = 'https://catfact.ninja/fact';
 
 
 function CatFact() {
-    const { data : oneCatFact, isLoading, refetch } = useQuery(['catFact'], () => {
+    const { data : oneCatFact, isLoading, refetch, error } = useQuery(['catFact'], () => {
         return Axios.get(url)
         .then((res) => res.data.fact);
     });
@@ -12,6 +12,7 @@ function CatFact() {
         return (
         <h2>A Cat Fact is Loading...</h2>);
     }
+    
     return (
         <div>
             <h1>Cat Fact</h1>

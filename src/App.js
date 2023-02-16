@@ -8,7 +8,7 @@ import PageNotFound from "./components/PageNotFound.js";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
 
-
+//deploying on netflify
 
 
 

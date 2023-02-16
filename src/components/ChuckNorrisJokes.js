@@ -3,7 +3,7 @@ import Axios from 'axios';
 const url = 'https://api.chucknorris.io/jokes/random';
 
 function ChuckNorrisJokes() {
-    const {data, isLoading, error, refetch} = useQuery({
+    const {data : oneChuckNorisJoke, isLoading, error, refetch} = useQuery({
         queryKey : ['chuckNorrisJokes'],
         queryFn : () => {
         return Axios.get(url)
@@ -22,7 +22,7 @@ function ChuckNorrisJokes() {
     return (
         <div>
             <h1>Chuck Norris Jokes</h1>
-            <p>{data}</p>
+            <p>{oneChuckNorisJoke}</p>
             <button className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-full w-20 ml-2 font-extrabold text-black" onClick={refetch}> new joke!</button>
         </div>
     );
